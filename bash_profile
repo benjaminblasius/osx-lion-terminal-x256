@@ -46,8 +46,11 @@ colorsdisplay (){
 }
 
 # begin rvm display (if you don't want to use the rvm prompt display just comment out these lines in this section)
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-PS1="${COLOR_BRIGHT_BLACK}[${COLOR_NC}${COLOR_BRIGHT_PURPLE}rvm -> \$(~/.rvm/bin/rvm-prompt)${COLOR_NC}${COLOR_BRIGHT_BLACK}]\n"
+if [ -d "$HOME/.rvm" ]; then
+	[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function (http://beginrescueend.com/workflow/prompt/)
+	[[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion" # Load RVM completion (http://beginrescueend.com/workflow/completion/)
+	PS1="${COLOR_BRIGHT_BLACK}[${COLOR_NC}${COLOR_BRIGHT_PURPLE}rvm -> \$(~/.rvm/bin/rvm-prompt)${COLOR_NC}${COLOR_BRIGHT_BLACK}]\n"
+fi
 # end rvm display
 
 # begin git display (if you don't want to use the git prompt display just comment lines in this section)
