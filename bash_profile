@@ -48,7 +48,7 @@ colorsdisplay (){
 
 # begin rvm display (if you don't want to use the rvm prompt display just comment out these lines in this section)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-PS1="${COLOR_GRAY}[${COLOR_NC}${COLOR_BRIGHT_PURPLE}rvm -> \$(~/.rvm/bin/rvm-prompt)${COLOR_NC}${COLOR_GRAY}]\n"
+PS1="${COLOR_BRIGHT_BLACK}[${COLOR_NC}${COLOR_BRIGHT_PURPLE}rvm -> \$(~/.rvm/bin/rvm-prompt)${COLOR_NC}${COLOR_BRIGHT_BLACK}]\n"
 # end rvm display
 
 # begin git display (if you don't want to use the git prompt display just comment lines in this section)
@@ -56,15 +56,15 @@ PS1="${COLOR_GRAY}[${COLOR_NC}${COLOR_BRIGHT_PURPLE}rvm -> \$(~/.rvm/bin/rvm-pro
 # Turn on git tab completion if the file exists (get it here: https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)
 if [ -f ~/src/git/git-completion.bash ]; then
     . ~/src/git/git-completion.bash
-	PS1="$PS1[${COLOR_NC}${COLOR_CYAN}git -> \W$(__git_ps1 " (%s)")${COLOR_NC}${COLOR_GRAY}]\n"
+	PS1="$PS1[${COLOR_NC}${COLOR_CYAN}git -> \W$(__git_ps1 " (%s)")${COLOR_NC}${COLOR_BRIGHT_BLACK}]\n"
 fi
 # end git display
 
 # current working directory prompt
-PS1="$PS1[${COLOR_NC}${COLOR_GREEN}pwd -> \w${COLOR_NC}${COLOR_GRAY}]\n[${COLOR_NC}${COLOR_RED}\T${COLOR_NC}${COLOR_GRAY}] -> ${COLOR_NC}"
+PS1="$PS1[${COLOR_NC}${COLOR_GREEN}pwd -> \w${COLOR_NC}${COLOR_BRIGHT_BLACK}]\n[${COLOR_NC}${COLOR_RED}\T${COLOR_NC}${COLOR_BRIGHT_BLACK}] -> ${COLOR_NC}"
 export PS1
 # prompt for continuing commands
-PS2="${COLOR_GRAY} -> ${COLOR_NC}"
+PS2="${COLOR_BRIGHT_BLACK} -> ${COLOR_NC}"
 export PS2
 
 alias ls='ls --color=auto' 
