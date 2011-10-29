@@ -11,9 +11,8 @@ export CLICOLOR=1
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 
 # customize the colors in terminal preferences to your liking
-export TERM='xterm-color'
+export TERM='xterm-256color'
 export COLOR_NC='\[\033[0m\]' # No Color
-
 export COLOR_BLACK='\[\033[0;30m\]'
 export COLOR_BRIGHT_BLACK='\[\033[1;30m\]'
 export COLOR_RED='\[\033[0;31m\]'
