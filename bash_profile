@@ -13,41 +13,42 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 # customize the colors in terminal preferences to your liking
 export TERM='xterm-color'
 export COLOR_NC='\[\033[0m\]' # No Color
-export COLOR_WHITE='\[\033[1;37m\]'
+
 export COLOR_BLACK='\[\033[0;30m\]'
-export COLOR_BLUE='\[\033[0;34m\]'
-export COLOR_LIGHT_BLUE='\[\033[1;34m\]'
-export COLOR_GREEN='\[\033[0;32m\]'
-export COLOR_LIGHT_GREEN='\[\033[1;32m\]'
-export COLOR_CYAN='\[\033[0;36m\]'
-export COLOR_LIGHT_CYAN='\[\033[1;36m\]'
+export COLOR_BRIGHT_BLACK='\[\033[1;30m\]'
 export COLOR_RED='\[\033[0;31m\]'
-export COLOR_LIGHT_RED='\[\033[1;31m\]'
-export COLOR_PURPLE='\[\033[0;35m\]'
-export COLOR_LIGHT_PURPLE='\033[1;35m\]'
-export COLOR_BROWN='\[\033[0;33m\]'
+export COLOR_BRIGHT_RED='\[\033[1;31m\]'
+export COLOR_GREEN='\[\033[0;32m\]'
+export COLOR_BRIGHT_GREEN='\[\033[1;32m\]'
 export COLOR_YELLOW='\[\033[1;33m\]'
-export COLOR_GRAY='\[\033[0;30m\]'
-export COLOR_LIGHT_GRAY='\[\033[0;37m\]'
+export COLOR_BRIGHT_YELLOW='\[\033[1;33m\]'
+export COLOR_BLUE='\[\033[0;34m\]'
+export COLOR_BRIGHT_BLUE='\[\033[1;34m\]'
+export COLOR_PURPLE='\[\033[0;35m\]'
+export COLOR_BRIGHT_PURPLE='\033[1;35m\]'
+export COLOR_CYAN='\[\033[0;36m\]'
+export COLOR_BRIGHT_CYAN='\[\033[1;36m\]'
+export COLOR_WHITE='\[\033[0;37m\]'
+export COLOR_BRIGHT_WHITE='\[\033[1;37m\]'
 alias colorslist="set | egrep '^COLOR_\\w*'"  # lists all the colors
 
 # call this function from prompt then customize your terminal colors how you like in the terminal/preference/settings
 # colors will change so you can see what they look like in the terminal
 colorsdisplay (){
 	echo -e "\033[0mCOLOR_NC (No color)"
-	echo -e "\033[1;37mCOLOR_WHITE\t\033[0;30mCOLOR_BLACK"
-	echo -e "\033[0;34mCOLOR_BLUE\t\033[1;34mCOLOR_LIGHT_BLUE"
-	echo -e "\033[0;32mCOLOR_GREEN\t\033[1;32mCOLOR_LIGHT_GREEN"
-	echo -e "\033[0;36mCOLOR_CYAN\t\033[1;36mCOLOR_LIGHT_CYAN"
-	echo -e "\033[0;31mCOLOR_RED\t\033[1;31mCOLOR_LIGHT_RED"
-	echo -e "\033[0;35mCOLOR_PURPLE\t\033[1;35mCOLOR_LIGHT_PURPLE"
-	echo -e "\033[0;33mCOLOR_YELLOW\t\033[1;33mCOLOR_LIGHT_YELLOW"
-	echo -e "\033[1;30mCOLOR_GRAY\t\033[0;37mCOLOR_LIGHT_GRAY"
+	echo -e "\033[0;30mCOLOR_BLACK\t\033[1;30mCOLOR_BRIGHT_BLACK"
+	echo -e "\033[0;31mCOLOR_RED\t\033[1;31mCOLOR_BRIGHT_RED"
+	echo -e "\033[0;32mCOLOR_GREEN\t\033[1;32mCOLOR_BRIGHT_GREEN"
+	echo -e "\033[0;33mCOLOR_YELLOW\t\033[1;33mCOLOR_BRIGHT_YELLOW"				
+	echo -e "\033[0;34mCOLOR_BLUE\t\033[1;34mCOLOR_BRIGHT_BLUE"
+	echo -e "\033[0;35mCOLOR_PURPLE\t\033[1;35mCOLOR_BRIGHT_PURPLE"
+	echo -e "\033[0;36mCOLOR_CYAN\t\033[1;36mCOLOR_BRIGHT_CYAN"
+	echo -e "\033[0;37mCOLOR_WHITE\t\033[1;37mCOLOR_BRIGHT_WHITE"
 }
 
 # begin rvm display (if you don't want to use the rvm prompt display just comment out these lines in this section)
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-PS1="${COLOR_GRAY}[${COLOR_NC}${COLOR_LIGHT_PURPLE}rvm -> \$(~/.rvm/bin/rvm-prompt)${COLOR_NC}${COLOR_GRAY}]\n"
+PS1="${COLOR_GRAY}[${COLOR_NC}${COLOR_BRIGHT_PURPLE}rvm -> \$(~/.rvm/bin/rvm-prompt)${COLOR_NC}${COLOR_GRAY}]\n"
 # end rvm display
 
 # begin git display (if you don't want to use the git prompt display just comment lines in this section)
