@@ -58,7 +58,7 @@ fi
 # Turn on git tab completion if the file exists (get it here: https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)
 if [ -f ~/src/git/git-completion.bash ]; then
     . ~/src/git/git-completion.bash
-	PS1="$PS1[${COLOR_NC}${COLOR_CYAN}git -> \W$(__git_ps1 " (%s)")${COLOR_NC}${COLOR_BRIGHT_BLACK}]\n"
+	PS1="$PS1[${COLOR_NC}${COLOR_CYAN}git -> \W\$(__git_ps1 " (%s)")${COLOR_NC}${COLOR_BRIGHT_BLACK}]\n"
 fi
 # end git display
 
