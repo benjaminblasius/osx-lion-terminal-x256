@@ -4,6 +4,8 @@ clear
 
 PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 PATH="/usr/local/mysql/bin:$PATH" # mysql path
+PATH="/opt/local/bin:/opt/local/sbin:$PATH" # macports path
+PATH="/Users/benjamin/pear/bin:$PATH" # PEAR
 export PATH
 
 export BUNDLEEDITOR=/usr/local/bin/mate
@@ -45,6 +47,8 @@ colorsdisplay (){
 	echo -e "\033[0;37mCOLOR_WHITE\t\033[1;37mCOLOR_BRIGHT_WHITE"
 }
 
+PS1="\n$PS1\n"
+
 # begin rvm display (if you don't want to use the rvm prompt display just comment out these lines in this section)
 if [ -d "$HOME/.rvm" ]; then
 	[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function (http://beginrescueend.com/workflow/prompt/)
@@ -58,12 +62,12 @@ fi
 # Turn on git tab completion if the file exists (get it here: https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)
 if [ -f ~/src/git/git-completion.bash ]; then
     . ~/src/git/git-completion.bash
-	PS1="$PS1[${COLOR_NC}${COLOR_CYAN}git -> \W\$(__git_ps1 \" (%s)\")${COLOR_NC}${COLOR_BRIGHT_BLACK}]\n"
+	PS1="$PS1${COLOR_BRIGHT_BLACK}[${COLOR_NC}${COLOR_CYAN}git -> \W\$(__git_ps1 \" (%s)\")${COLOR_NC}${COLOR_BRIGHT_BLACK}]\n"
 fi
 # end git display
 
 # current working directory prompt
-PS1="$PS1[${COLOR_NC}${COLOR_GREEN}pwd -> \w${COLOR_NC}${COLOR_BRIGHT_BLACK}]\n[${COLOR_NC}${COLOR_RED}\T${COLOR_NC}${COLOR_BRIGHT_BLACK}] -> ${COLOR_NC}"
+PS1="$PS1${COLOR_BRIGHT_BLACK}[${COLOR_NC}${COLOR_GREEN}pwd -> \w${COLOR_NC}${COLOR_BRIGHT_BLACK}]\n${COLOR_BRIGHT_BLACK}[${COLOR_NC}${COLOR_RED}\T${COLOR_NC}${COLOR_BRIGHT_BLACK}] -> ${COLOR_NC}"
 export PS1
 # prompt for continuing commands
 PS2="${COLOR_BRIGHT_BLACK} -> ${COLOR_NC}"
